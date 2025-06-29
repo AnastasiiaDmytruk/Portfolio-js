@@ -1,0 +1,51 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.header {
+  position: absolute;
+  z-index: 9999999;
+  left: 0;
+  width: 100%;
+  padding: 22px 0 32px 0;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.header-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.header-logo-jeff,
+.header-icon-burger {
+  fill: #fafafa;
+}
+
+.header-btn-burger {
+  stroke-width: 2px;
+  background-color: inherit;
+  stroke: #fafafa;
+  border: none;
+  padding: 0;
+}
+
+.header-menu-click,
+.header-button {
+  display: none;
+}
+
+.menu-click {
+  display: none;
+}
