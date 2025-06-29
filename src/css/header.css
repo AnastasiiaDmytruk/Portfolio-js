@@ -1,51 +1,102 @@
+/* === Base === */
 html {
   scroll-behavior: smooth;
 }
 
+/* === Header === */
 .header {
   position: absolute;
-  z-index: 9999999;
-  left: 0;
+  z-index: 9999;
   width: 100%;
-  padding: 22px 0 32px 0;
+  left: 0;
+  padding: 22px 0 32px;
   background: transparent;
   transition: all 0.3s ease-in-out;
 }
 
+.header.fixed {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0 32px;
+  height: 72px;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.35s ease-in-out;
+}
+
+/* === Header Content === */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 10px;
+}
+
+.header.fixed .header-container {
+  padding: 10px 32px;
+  align-items: center;
+}
+
 .header-logo {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
   gap: 8px;
   justify-content: space-between;
 }
 
-.header-container {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding-top: 10px;
+.header.fixed .header-logo {
+  display: none;
 }
 
+/* === Header Icons === */
 .header-logo-jeff,
 .header-icon-burger {
   fill: #fafafa;
 }
 
+/* === Burger Button === */
 .header-btn-burger {
-  stroke-width: 2px;
   background-color: inherit;
   stroke: #fafafa;
   border: none;
   padding: 0;
+  stroke-width: 2px;
 }
 
-.header-menu-click,
-.header-button {
+@media (min-width: 768px) {
+  .header-btn-burger {
+    display: none;
+  }
+}
+
+/* === Header Menu === */
+.header-menu-click {
   display: none;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fafafa;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  transition: 0.35s ease-in-out;
+  cursor: pointer;
 }
 
-.menu-click {
+.header-menu-click:hover,
+.header-menu-click:focus {
+  color: #ed3b44;
+}
+
+@media (min-width: 768px) {
+  .header-menu-click {
+    display: block;
+  }
+}
+
+/* === Header Button === */
+.header-button {
   display: none;
 }
