@@ -1,3 +1,4 @@
+/* === Hero Base === */
 .hero {
   position: relative;
   background: linear-gradient(
@@ -6,20 +7,25 @@
     #69292d 67.73%,
     #ed3b44 100%
   );
-
   z-index: 0;
-  padding-top: 281px;
-  padding-bottom: 32px;
+  padding: 281px 0 32px;
 }
 
+.hero-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 212px;
+}
+
+/* === Hero Background === */
 .hero-background {
   position: absolute;
   top: 0;
   left: -57px;
   width: 83%;
   height: 100%;
-  overflow: hidden;
   display: flex;
+  overflow: hidden;
   z-index: -1;
   mask-image: linear-gradient(
     to right,
@@ -31,6 +37,7 @@
 .background-effect {
   margin-left: -5px;
   width: 57px;
+  flex-shrink: 0;
   backdrop-filter: blur(100px);
   background: linear-gradient(
     90deg,
@@ -40,7 +47,6 @@
     rgba(0, 0, 0, 0.2) 35%,
     rgba(100, 100, 100, 0) 100%
   );
-  flex-shrink: 0;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
@@ -49,8 +55,69 @@
   opacity: 1;
 }
 
-.hero-wrap {
+/* === Hero Title === */
+.hero-title {
+  font-size: 50px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #fafafa;
+  animation: colorCycle 10s linear infinite;
+}
+
+/* === Social Links List === */
+.hero-list {
   display: flex;
-  flex-direction: column;
-  gap: 212px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 4px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+
+.hero-list-item {
+  display: inline-block;
+  animation: bounce 1.6s ease-in-out infinite;
+}
+
+.hero-list-item:nth-child(1) {
+  animation-delay: 0s;
+}
+.hero-list-item:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.hero-list-item:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.hero-list-item:nth-child(4) {
+  animation-delay: 0.9s;
+}
+.hero-list-item:nth-child(5) {
+  animation-delay: 1.2s;
+}
+
+.hero-social-link {
+  color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 37px;
+  height: 37px;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  border-radius: 60px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.35s ease-in-out;
+}
+
+.hero-social-link:hover {
+  border: 1px solid #ed3b44;
+  box-shadow: 0 0 15px #ed3b44;
+  color: #ed3b44;
+}
+
+.hero-social-link.hero-email-link {
+  width: 178px;
 }
